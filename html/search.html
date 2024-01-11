@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Some basic styling for demonstration */
+    .movie {
+      display: none;
+      border: 1px solid #ccc;
+      margin: 5px;
+      padding: 10px;
+      width: 300px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+        // Function to filter movies based on user input
+        $('#searchInput').on('input', function() {
+          const searchQuery = $(this).val().toLowerCase();
+      
+          $('.movie').each(function() {
+            const movieTitle = $(this).data('title').toLowerCase();
+            const movieYear = $(this).data('year').toString();
+      
+            // Check if the movie title or year contains the search query
+            if (movieTitle.includes(searchQuery) || movieYear.includes(searchQuery)) {
+              $(this).show(); // Show the movie if it matches the search
+            } else {
+              $(this).hide(); // Hide if it doesn't match
+            }
+          });
+        });
+      });      
+  </script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Movie App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/cybage-project-final/html/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cybage-project-final/html/movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cybage-project-final/html/tvshow.html">TV shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cybage-project-final/html/song.html">Songs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cybage-project-final/html/search.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-danger" type="submit" id="logout">LOGOUT</button>
+            </li>
+            
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron text-center">
+    <h1>Welcome `${username}`</h1>
+    <p>Discover, watch, and enjoy your favorite movies!</p>
+    <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+  </div>
+
+  <h1 class="text-center">Movie Search</h1>
+
+  <!-- <input class="item" type="text" id="searchInput" placeholder="Search for a movie"> -->
+
+  <div class="input-group navbar navbar-dark bg-dark">
+    <input type="text" class="form-control" id="searchInput" placeholder="Search for a movie">
+  </div>
+
+  <div id="moviesList">
+    <!-- Movies data -->
+    <div class="movie" data-title="Inception" data-year="2010">
+      <img src="https://via.placeholder.com/150" alt="Inception">
+      <div class="movie-info">
+        <h3>Inception</h3>
+        <p>2010</p>
+      </div>
+    </div>
+    <div class="movie" data-title="The Shawshank Redemption" data-year="1994">
+      <img src="https://via.placeholder.com/150" alt="The Shawshank Redemption">
+      <div class="movie-info">
+        <h3>The Shawshank Redemption</h3>
+        <p>1994</p>
+      </div>
+    </div>
+    <!-- Add more movie divs as needed -->
+  </div>
+
+  <script>
+    var loggedInUser = sessionStorage.getItem('loggedInUser');
+
+    if (!loggedInUser) {
+    // User is not logged in, redirect to login page
+    window.location.href = 'index.html';
+    }
+
+    // Logout button click event
+    $('#logout').click(function() {
+    // Remove logged-in user session and redirect to login page
+    sessionStorage.removeItem('loggedInUser');
+    window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

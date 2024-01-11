@@ -1,0 +1,70 @@
+{
+  "movies": [
+    {
+      "title": "Movie 1",
+      "image": "/cybage-project-final/images/telugumovies/3.png",
+      "description": "Description of Movie 1."
+    },
+    {
+      "title": "Movie 2",
+      "image": "/cybage-project-final/images/hollywood/1.jpg",
+      "description": "Description of Movie 2."
+    },
+    {
+      "title": "Movie 3",
+      "image": "/cybage-project-final/images/yt/1.jpg",
+      "description": "Description of Movie 3."
+    }
+  ],
+  "songs": [
+    {
+      "title": "Song 1",
+      "image": "/cybage-project-final/images/yt/2.jpg",
+      "artist": "Artist 1"
+    },
+    {
+      "title": "Song 2",
+      "image": "/cybage-project-final/images/yt/3.jpg",
+      "artist": "Artist 2"
+    },
+    {
+      "title": "Song 3",
+      "image": "/cybage-project-final/images/yt/5.jpg",
+      "artist": "Artist 3"
+    }
+  ],
+  "tvShows": [
+    {
+      "title": "1",
+      "image": "/cybage-project-final/images/telugumovies/1.png",
+      "description": "Description of TV Show 1."
+    },
+    {
+      "title": "Inception",
+      "image": "/cybage-project-final/images/telugumovies/3.png",
+      "description": "Description of TV Show 2."
+    },
+    {
+      "title": "Dangal",
+      "image": "/cybage-project-final/images/telugumovies/11.jpg",
+      "description": "Description of TV Show 3."
+    }
+  ],
+  "user": [
+    {
+      "name": "Abhay Ra",
+      "password": "abhay123@",
+      "mobile": "1234567891",
+      "email": "123@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Abhay R",
+      "password": "abhay@123",
+      "mobile": "5675678908",
+      "email": "div@gmail.con",
+      "id": 2
+    }
+  ],
+  "rating": []
+}
